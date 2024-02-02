@@ -41,7 +41,7 @@ qBitTorrent 是一款开源免费的种子和磁力链接下载工具，支持 W
 
 - 宿主机安装 docker、docker-compose
 - 宿主机安全组/防火墙（iptables/firewall）放行这些端口的入口流量： 80、8081-8089、8081-8089/udp、9000、9090
-- 下载仓库： `git clone https://github.com/lyy289065406/qBitTorrent-docker /usr/local/qBitTorrent-docker`
+- 下载仓库： `git clone https://github.com/xiongpahao/qBitTorrent-docker /usr/local/qBitTorrent-docker`
 - 打开仓库目录： `cd /usr/local/qBitTorrent-docker`
 - 构建镜像并运行： `caddy_user=admin caddy_pass=123456 docker-compose up -d`
 
