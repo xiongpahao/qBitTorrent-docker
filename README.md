@@ -88,7 +88,7 @@ crontab -e
 
 ## 通过 HTTPS 访问
 
-<details> <summary> 使用 Caddy 支持 HTTPS </summary>
+<summary> 使用 Caddy 支持 HTTPS </summary>
 
 <p>
 
@@ -147,7 +147,6 @@ sudo systemctl status caddy
 
 </p>
 
-</details>
 
 
 ## FAQ
