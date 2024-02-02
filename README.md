@@ -1,12 +1,13 @@
 # qBitTorrent-docker
 
-> docker 一键部署 VPS-BT 离线下载
+> docker 一键部署 VPS-BT 离线下载 -- 支持HTTPS
 
 ------
 
 ## 概要
 
 通过把 qBitTorrent 部署到个人的 VPS，就能离线下载到 VPS，再按需从 VPS 取回本地。
+同时实现以https://your.domain.com的方式访问qBittorrent WebUI以及已下载文件夹。
 
 
 ## 项目说明
