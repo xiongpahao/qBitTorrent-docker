@@ -5,20 +5,6 @@
 
 version: '2'
 services:
-  nginx:
-    hostname: NGINX
-    container_name: docker_nginx
-    image: nginx:mainline
-    volumes:
-      - ./nginx/etc/bt_site.conf:/etc/nginx/conf.d/bt_site.conf
-      - ./nginx/html:/usr/share/nginx/html
-    ports:
-      - "80:80"
-    networks: 
-      vpn:
-        ipv4_address: 172.168.21.2
-    restart: on-failure
-
 
   torrent:
     hostname: TORRENT
@@ -29,7 +15,7 @@ services:
     volumes:
       - ./downloads/:/downloads/
     ports:
-      - "8080:8080"
+      - "8088:8088"
       - "9000:9000"
       - "8081:8081"
       - "8081:8081/udp"
