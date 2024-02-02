@@ -23,7 +23,7 @@ qBitTorrent 是一款开源免费的种子和磁力链接下载工具，支持 W
 
 | 镜像 | 用途 | 服务端口 | 端口说明 |
 |:------:|:------:|:------:|:------|
-| [qBitTorrent](https://github.com/qbittorrent/qBittorrent) | 用于 BT 下载资源到 VPS | 8080 | WEB 管理界面 |
+| [qBitTorrent](https://github.com/qbittorrent/qBittorrent) | 用于 BT 下载资源到 VPS | 8088 | WEB 管理界面 |
 | - | - | 8081 | 用于 P2P 连接的最小端口，默认 6881(-6889)，<br/>但 6881 已被大部分资源站拉黑，<br/>故设置为另一个最小端口 |
 | - | - | 9000 | 用于内部共享私有种子的端口 |
 | [caddy](https://github.com/caddyserver/caddy) | 用于从 VPS 上拉回资源到本地 | 9090 | 资源文件的浏览界面 |
@@ -41,7 +41,7 @@ qBitTorrent 是一款开源免费的种子和磁力链接下载工具，支持 W
 ### 1. 项目构建
 
 - 宿主机安装 docker、docker-compose
-- 宿主机安全组/防火墙（iptables/firewall）放行这些端口的入口流量： 80、8080、8081-8089、8081-8089/udp、9000、9090
+- 宿主机安全组/防火墙（iptables/firewall）放行这些端口的入口流量： 80、8081-8089、8081-8089/udp、9000、9090
 - 下载仓库： `git clone https://github.com/lyy289065406/qBitTorrent-docker /usr/local/qBitTorrent-docker`
 - 打开仓库目录： `cd /usr/local/qBitTorrent-docker`
 - 构建镜像并运行： `caddy_user=admin caddy_pass=123456 docker-compose up -d`
@@ -51,7 +51,7 @@ qBitTorrent 是一款开源免费的种子和磁力链接下载工具，支持 W
 
 ### 2. 配置 qBitTorrent
 
-- 登录 WEB 管理页面：`http://${vps-ip}/bt/`（或 `http://${vps-ip}:8080`）
+- 登录 WEB 管理页面：`http://${vps-ip}/bt/`（或 `http://${vps-ip}:8088`）
 - 默认登录账密: `admin / adminadmin`
 - 修改默认密码: 【选项】 -> 【Web UI】 -> 【验证】
 - 修改 tracker 列表： 【选项】 -> 【BitTorrent】 -> 【自动添加以下 tracker 到新的 torrent】
