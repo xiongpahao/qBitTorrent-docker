@@ -85,7 +85,7 @@ crontab -e
 
 ![](imgs/04.png)
 
-## 支持 HTTPS
+## 通过 HTTPS 访问
 
 <details> <summary> 使用 Caddy 支持 HTTPS </summary>
 
@@ -111,7 +111,7 @@ sudo apt install caddy
 sudo vi /etc/caddy/Caddyfile
 ```
 
-假如你准备使用的域名为 `your.domain.com`，请确保以下条件：
+假如你准备使用的域名为 `your1.domain.com`、`your2.domain.com`，请确保以下条件：
 
 -   请先进行 DNS 解析，将你的域名解析到服务器 IP 地址。
 -   开放 80 端口和 443 端口，并且端口没有被其他程序占用，如 Nginx、Xray 等。
@@ -119,8 +119,11 @@ sudo vi /etc/caddy/Caddyfile
 然后在 Caddyfile 中添加以下内容：
 
 ```bash
-your.domain.com {
-    reverse_proxy localhost:8080
+your1.domain.com {
+    reverse_proxy localhost:8088
+}
+your2.domain.com {
+    reverse_proxy localhost:9090
 }
 ```
 
@@ -139,7 +142,7 @@ sudo systemctl enable caddy
 sudo systemctl status caddy
 ```
 
-如果一切顺利，那此时就可以通过 `https://your.domain.com` 访问 copilot-gpt4-service 服务了。
+如果一切顺利，那此时就可以通过 `https://your1.domain.com` 访问 qBittorrent WebUI, 通过`https://your2.domain.com`访问已下载文件夹了。
 
 </p>
 
