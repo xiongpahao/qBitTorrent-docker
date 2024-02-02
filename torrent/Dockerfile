@@ -7,7 +7,7 @@ ENV PUID=1000
 ENV PGID=1000
 ENV TZ=Aisa/Shanghai
 ENV UMASK_SET=022
-ENV WEBUI_PORT=8080
+ENV WEBUI_PORT=8088
 
 RUN mkdir -p /downloads/incomplete/ && \
     mkdir -p /config/qBittorrent/
@@ -16,7 +16,7 @@ RUN mkdir -p /downloads/incomplete/ && \
 # 因为会引起权限问题，不能直接挂载为 qBittorrent.conf
 ADD ./qBittorrent.conf /config/qBittorrent/qBittorrent_new.conf
 
-EXPOSE 8080
+EXPOSE 8088
 EXPOSE 9000
 EXPOSE 6881
 EXPOSE 6881/udp
