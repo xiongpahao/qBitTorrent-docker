@@ -76,7 +76,7 @@ crontab -e
 ```
 
 
-### 4. 使用 caddy 浏览已下载文件
+### 4. 使用 Caddy 浏览已下载文件
 
 - 登录 WEB 页面：`http://${vps-ip}/list/` 或 `http://${vps-ip}:9090`
 - 默认 BasicAuth 登录账密: `admin / 123456`
@@ -84,6 +84,67 @@ crontab -e
 > BasicAuth 的账号密码在第 1 步构建项目时已配置好
 
 ![](imgs/04.png)
+
+## 支持 HTTPS
+
+<details> <summary> 使用 Caddy 支持 HTTPS </summary>
+
+<p>
+
+[Caddy](https://caddyserver.com/docs/) 可以很方便地为端口服务提供 HTTPS 支持，自动管理证书，省心省力。
+
+以下是一个 Debian/Ubuntu 系统上使用 Caddy 的示例，其他系统请参考 [Caddy 官方文档](https://caddyserver.com/docs/)。
+
+### 安装 Caddy
+
+```bash
+sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+sudo apt update
+sudo apt install caddy
+```
+
+### 配置 Caddy
+
+```bash
+sudo vi /etc/caddy/Caddyfile
+```
+
+假如你准备使用的域名为 `your.domain.com`，请确保以下条件：
+
+-   请先进行 DNS 解析，将你的域名解析到服务器 IP 地址。
+-   开放 80 端口和 443 端口，并且端口没有被其他程序占用，如 Nginx、Xray 等。
+
+然后在 Caddyfile 中添加以下内容：
+
+```bash
+your.domain.com {
+    reverse_proxy localhost:8080
+}
+```
+
+### 启动 Caddy
+
+执行以下命令启动 Caddy：
+
+```bash
+# 启动 Caddy
+sudo systemctl start caddy
+
+# 设置 Caddy 开机自启
+sudo systemctl enable caddy
+
+# 查看 Caddy 运行状态
+sudo systemctl status caddy
+```
+
+如果一切顺利，那此时就可以通过 `https://your.domain.com` 访问 copilot-gpt4-service 服务了。
+
+</p>
+
+</details>
+
 
 ## FAQ
 
