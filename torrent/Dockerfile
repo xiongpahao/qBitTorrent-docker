@@ -23,4 +23,4 @@ EXPOSE 6881/udp
 WORKDIR /config
 
 # 此镜像服务会自启，再启动会因为端口冲突导致镜像无限重启
-# CMD [ "/usr/bin/qbittorrent-nox", "--webui-port=8080" ]
+# CMD [ "/usr/bin/qbittorrent-nox", "--webui-port=8088" ]
