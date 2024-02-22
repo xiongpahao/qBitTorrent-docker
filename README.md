@@ -57,9 +57,9 @@ docker-compose up -d
 
 > 更多配置可参考《[专业磁力种子下载工具 qBittorrent 使用教程](https://zhuanlan.zhihu.com/p/64254201)》
 
-![](imgs/01.png)
+![](imgs/qbt1.jpg)
 
-![](imgs/02.png)
+![](imgs/qbt2.jpg)
 
 
 ### 3. 配置定时更新 trackers
