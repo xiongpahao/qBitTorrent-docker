@@ -47,8 +47,6 @@ export PGID=$(id -g)
 docker-compose up -d
 ```
 
-> File Browser的默认用户名/密码为`admin / admin`；qBittorrent 的默认用户名/密码为`admin / adminadmin`，建议部署好后立即在web页面修改密码。
-
 
 ### 2. 配置 qBitTorrent
 
