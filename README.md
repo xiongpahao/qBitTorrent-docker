@@ -89,7 +89,9 @@ crontab -e
 - 登录 WEB 页面：`http://${vps-ip}:9090`
 - 默认登录用户名和密码: `admin / admin`
 
-![](imgs/04.png)
+![](imgs/fb1.jpg)
+
+![](imgs/fb2.jpg)
 
 ## 实现通过 HTTPS 访问
 
