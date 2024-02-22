@@ -22,8 +22,6 @@ services:
     networks: 
       vpn:
         ipv4_address: 172.168.21.3
-    depends_on: 
-      - nginx
     restart: on-failure
 
 
