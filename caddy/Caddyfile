@@ -1,8 +1,0 @@
-:9090 {
-    root * /downloads/
-    file_server browse
-    encode gzip
-    basicauth / {
-        USERNAME PASSWORD
-    }
-}
