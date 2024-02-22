@@ -6,7 +6,7 @@
 
 ## 概要
 
-通过把 qBitTorrent 部署到个人的 VPS，就能离线下载到 VPS，再按需从 VPS 取回本地。
+通过把 qBitTorrent 和File Browser 部署到个人的 VPS，实现离线下载到 VPS，并可以管理、取回已下载的文件。
 同时实现以 `https://your.domain.com` 的方式访问qBittorrent WebUI以及已下载文件夹。
 
 
@@ -19,7 +19,7 @@
 | [qBitTorrent](https://github.com/qbittorrent/qBittorrent) | 用于 BT 下载资源到 VPS | 8088 | WEB 管理界面 |
 | - | - | 8081 | 用于 P2P 连接的最小端口，默认 6881(-6889)，<br/>但 6881 已被大部分资源站拉黑，<br/>故设置为另一个最小端口 |
 | - | - | 9000 | 用于内部共享私有种子的端口 |
-| [caddy](https://github.com/caddyserver/caddy) | 用于从 VPS 上拉回资源到本地 | 9090 | 资源文件的浏览界面 |
+| [File Browser](https://filebrowser.org/) | 用于管理和取回已下载的文件 | 9090 | 资源文件的管理界面 |
 
 
 ## 环境要求
@@ -36,9 +36,14 @@
 - 宿主机安全组/防火墙（iptables/firewall）放行这些端口的入口流量： 80、8081-8089、8081-8089/udp、9000、9090
 - 下载仓库： `git clone https://github.com/xiongpahao/qBitTorrent-docker /usr/local/qBitTorrent-docker`
 - 打开仓库目录： `cd /usr/local/qBitTorrent-docker`
-- 构建镜像并运行： `caddy_user=admin caddy_pass=123456 docker-compose up -d`
+- 构建镜像并运行：
+```shell
+export PUID=$(id -u)
+export PGID=$(id -g)
+docker-compose up -d
+```
 
-> caddy 的账号密码按需设置即可；qBittorrent 的密码因为使用 PBKDF2 算法，又没有提供生成密码的命令行工具，故只能在 WEB 页面上修改。
+> File Browser的默认用户名/密码为`admin/admin`；qBittorrent 的默认用户名/密码为`admin/adminadmin`，建议部署好后立即在web页面修改密码。
 
 
 ### 2. 配置 qBitTorrent
