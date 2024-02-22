@@ -38,7 +38,7 @@
 #下载仓库：
 git clone https://github.com/xiongpahao/qBitTorrent-docker /usr/local/qBitTorrent-docker
 
-# 进入仓库目录：
+#进入仓库目录：
 cd /usr/local/qBitTorrent-docker
 
 #构建镜像并运行：
