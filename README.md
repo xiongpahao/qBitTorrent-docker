@@ -47,12 +47,12 @@ export PGID=$(id -g)
 docker-compose up -d
 ```
 
-> File Browser的默认用户名/密码为`admin/admin`；qBittorrent 的默认用户名/密码为`admin/adminadmin`，建议部署好后立即在web页面修改密码。
+> File Browser的默认用户名/密码为`admin / admin`；qBittorrent 的默认用户名/密码为`admin / adminadmin`，建议部署好后立即在web页面修改密码。
 
 
 ### 2. 配置 qBitTorrent
 
-- 登录 WEB 管理页面：`http://${vps-ip}/bt/`（或 `http://${vps-ip}:8088`）
+- 登录 WEB 管理页面：`http://${vps-ip}:8088`
 - 默认登录账密: `admin / adminadmin`
 - 修改默认密码: 【选项】 -> 【Web UI】 -> 【验证】
 - 修改 tracker 列表： 【选项】 -> 【BitTorrent】 -> 【自动添加以下 tracker 到新的 torrent】
@@ -86,12 +86,10 @@ crontab -e
 ```
 
 
-### 4. 使用 Caddy 浏览已下载文件
+### 4. 使用 File Browser 管理已下载文件
 
-- 登录 WEB 页面：`http://${vps-ip}/list/` 或 `http://${vps-ip}:9090`
-- 默认 BasicAuth 登录账密: `admin / 123456`
-
-> BasicAuth 的账号密码在第 1 步构建项目时已配置好
+- 登录 WEB 页面：`http://${vps-ip}:9090`
+- 默认登录用户名和密码: `admin / admin`
 
 ![](imgs/04.png)
 
@@ -171,7 +169,7 @@ qBitTorrent 并不能直接解析迅雷链接或磁力链接，它只能解析 t
 
 仓库下的 [`downloads`](downloads) 挂载到 docker 容器，下载的文件均保存到这里。
 
-在前端可以通过 caddy 下载，在后端可以到这个目录下载。
+在前端可以通过 File Browser 下载，在后端可以到这个目录下载。
 
 另外需要注意下载的文件大小不能超过 [`downloads`](downloads) 目录所在磁盘的空间大小。
 
