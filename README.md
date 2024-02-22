@@ -1,6 +1,6 @@
 # qBitTorrent-docker
 
-> docker 一键部署 VPS-BT 离线下载 -- 支持HTTPS
+> docker 一键部署 VPS-BT 离线下载 -- 支持HTTPS访问
 
 ------
 
@@ -34,10 +34,14 @@
 
 - 宿主机安装 docker、docker-compose
 - 宿主机安全组/防火墙（iptables/firewall）放行这些端口的入口流量： 80、8081-8089、8081-8089/udp、9000、9090
-- 下载仓库： `git clone https://github.com/xiongpahao/qBitTorrent-docker /usr/local/qBitTorrent-docker`
-- 打开仓库目录： `cd /usr/local/qBitTorrent-docker`
-- 构建镜像并运行：
 ```shell
+#下载仓库：
+git clone https://github.com/xiongpahao/qBitTorrent-docker /usr/local/qBitTorrent-docker
+
+# 进入仓库目录：
+cd /usr/local/qBitTorrent-docker`
+
+#构建镜像并运行：
 export PUID=$(id -u)
 export PGID=$(id -g)
 docker-compose up -d
