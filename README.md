@@ -25,7 +25,7 @@
 ## 环境要求
 
 ![](https://img.shields.io/badge/Platform-Linux%20amd64-brightgreen.svg)
-
+确保已安装Docker Compose，可参考[官方文档](https://docs.docker.com/compose/install/)
 
 
 ## 部署步骤
