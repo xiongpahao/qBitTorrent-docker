@@ -94,7 +94,7 @@ crontab -e
 
 ![](imgs/fb2.jpg)
 
-## 5. 实现通过 HTTPS 访问
+### 5. 实现通过 HTTPS 访问
 
 <summary> 使用 Caddy 支持 HTTPS </summary>
 
@@ -104,7 +104,7 @@ crontab -e
 
 以下是一个 Debian/Ubuntu 系统上使用 Caddy 的示例，其他系统请参考 [Caddy 官方文档](https://caddyserver.com/docs/)。
 
-### 安装 Caddy
+#### 安装 Caddy
 
 ```bash
 sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
@@ -114,7 +114,7 @@ sudo apt update
 sudo apt install caddy
 ```
 
-### 配置 Caddy
+#### 配置 Caddy
 
 ```bash
 sudo vi /etc/caddy/Caddyfile
@@ -136,7 +136,7 @@ your2.domain.com {
 }
 ```
 
-### 启动 Caddy
+#### 启动 Caddy
 
 执行以下命令启动 Caddy：
 
