@@ -45,7 +45,7 @@ cd /usr/local/qBitTorrent-docker
 #构建镜像并运行：
 export PUID=$(id -u)
 export PGID=$(id -g)
-docker-compose up -d
+docker compose up -d
 ```
 
 
