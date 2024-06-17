@@ -26,14 +26,11 @@
 
 ![](https://img.shields.io/badge/Platform-Linux%20amd64-brightgreen.svg)
 
-确保已安装Docker Compose，可参考[官方文档](https://docs.docker.com/compose/install/)
-
-
 ## 部署步骤
 
 ### 1. 项目构建
 
-- 宿主机安装 docker、docker-compose
+- 宿主机安装 docker、docker compose
 - 宿主机安全组/防火墙（iptables/firewall）放行这些端口的入口流量： 80、8081-8089、8081-8089/udp、9000、9090
 ```shell
 #下载仓库：
